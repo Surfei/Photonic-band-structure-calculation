@@ -1,5 +1,5 @@
 # Photonic band structure calculation
-## 光子晶体能带计算
+## 光子晶体能带结构计算
 ### 程序介绍
 - 使用Matlab程序  
 - 主程序 `photonic_crystal.m` 计算本征频率并画出能带图  
