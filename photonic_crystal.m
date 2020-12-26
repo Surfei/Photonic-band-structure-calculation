@@ -58,25 +58,27 @@ for t=1:3
     end
 end
 
-% for t=1:3
-% %     omega=zeros(NG,Nk+1);
-% %     F=zeros(NG,NG);
-%     kvector=kkvector{t};
-%     for k=1:Nk+1
-%         for i=1:NG
-%             for j=1:NG
-%                 F(i,j)=norm(kvector(k,:)+G(i,:))*norm(kvector(k,:)+G(j,:))*ecrcepsilon((G(i,:)-G(j,:)));
-%             end
-%         end
-%         omega(:,(t-1)*(Nk+1)+k)=sqrt(eig(F))*a/(2*pi);
-%     end
-% end
-
-
-for i=1:NG
-    plot(x,omega(i,:))
-%     axis([0 pi/a 0 0.8]);
-    hold on
+if mode==0
+    for i=1:NG
+        plot(x,omega(i,:),'r','Linewidth',1)
+        hold on
+    end
+    text(5/63,0.35,'TE modes','color',[1 0 0]);
+elseif mode==1
+    for i=1:NG
+        plot(x,omega(i,:),'color',[0.09 0.32 0.59],'Linewidth',1)
+        hold on
+    end
+    text(5/63,0.08,'TM modes','color',[0.09 0.32 0.59]);
 end
-ylabel('\omegaa/2\pic');
+
 ylim([0 0.8])
+plot([1/3 1/3], get(gca, 'YLim'),'k');
+plot([2/3 2/3], get(gca, 'YLim'),'k');
+set(gca,'xtick',[]);
+ylabel('Frequency   \omegaa/2\pic');
+
+text(0-0.018,-0.03,'\Gamma','FontSize',15);
+text(1/3-0.018,-0.03,'\chi','FontSize',15);
+text(2/3-0.018,-0.03,'M','FontSize',15);
+text(1-0.018,-0.03,'\Gamma','FontSize',15);
