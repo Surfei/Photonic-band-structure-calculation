@@ -1,4 +1,4 @@
-# photonic band structure calculation
+# Photonic band structure calculation
 ## 光子晶体能带计算
 ### 程序介绍
 - 使用Matlab程序  
